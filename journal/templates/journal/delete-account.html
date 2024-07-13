@@ -1,0 +1,36 @@
+{% extends 'journal/navbar.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <br>
+
+    <br>
+    <br>
+
+    <div class="card border-warning mb-3" style="max-width: 35rem; margin: auto;">
+        <div class="card-body">
+            <h3 class="card-title">Delete Your Account</h3>
+            <p class="card-text">Are you sure that you want to delete your account?</p>
+
+            <br>
+
+            <form method="POST" autocomplete="off">
+                {% csrf_token %}
+                <button class="btn btn-outline-danger btn-md w-100 btn-block p-3" type="submit">
+                    <i class="fa fa-minus" aria-hidden="true"></i> &nbsp; Yes, delete my account
+                </button>
+            </form>
+
+            <br>
+
+            <a href="{% url 'profile-management' %}" class="btn btn-link">Return to Profile Management</a>
+        </div>
+    </div>
+
+    <br>
+
+</div>
+
+{% endblock %}
